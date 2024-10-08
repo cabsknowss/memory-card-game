@@ -47,21 +47,10 @@ body {
   color: black;
   font-family: "Helvetica", "Arial", sans-serif;
   font-size: 16px;
+  background-color: #222222;
 }
-
-/* UTILITIES */
 
 /* STYLING */
-.app {
-  /* background-color: green; */
-  background: linear-gradient(0deg, #3e6623, #000);
-}
-
-@media (min-width: 1700px) {
-  .app {
-    height: 100vh;
-  }
-}
 
 header {
   display: flex;
@@ -106,9 +95,26 @@ p {
   overflow-y: auto;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 2.5rem;
   padding: 1rem;
+}
+
+@media (min-width: 700px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-grid {
+    overflow-y: auto;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    padding: 1rem;
+  }
 }
 
 .card {
