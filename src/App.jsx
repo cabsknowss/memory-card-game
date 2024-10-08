@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Notify from "./Notify";
 
 const initialCards = [
   {
@@ -67,6 +68,7 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [cards, setCards] = useState(initialCards);
+  const [showNotify, setShowNotify] = useState(false);
 
   useEffect(() => {
     const newArr = [...cards];
@@ -80,8 +82,7 @@ const App = () => {
 
   const onCardSelect = (card, id) => {
     if (card.chosen) {
-      setBestScore(score);
-      setScore(0);
+      setShowNotify(true);
       setCards(initialCards);
     }
 
@@ -126,6 +127,16 @@ const App = () => {
           ))}
         </div>
       </main>
+
+      {showNotify && (
+        <Notify
+          score={score}
+          setScore={setScore}
+          bestScore={bestScore}
+          setBestScore={setBestScore}
+          setShowNotify={setShowNotify}
+        />
+      )}
     </div>
   );
 };

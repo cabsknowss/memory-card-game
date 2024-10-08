@@ -82,6 +82,7 @@ header {
 
 .header-score {
   flex: 1.5;
+  text-align: end;
 }
 
 .header-title > h1 {
@@ -138,4 +139,57 @@ p {
 
 .card > img {
   border-radius: 1rem;
+}
+
+.notify-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  color: white;
+  backdrop-filter: blur(5px);
+  z-index: 101;
+}
+
+.notify-container {
+  width: 80%;
+  height: 50%;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 102;
+  padding: 2rem;
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  color: black;
+  text-align: center;
+}
+
+.notify-container > h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.notify-close {
+  padding: 0.5rem 3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: #8ab661;
+  color: white;
+  border: 0;
+  box-shadow: 0px 0px 5px 2px #1c2d10;
+}
+
+.notify-close:hover,
+.notify-close:active {
+  opacity: 0.85;
 }
